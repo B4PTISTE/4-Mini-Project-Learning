@@ -1,0 +1,38 @@
+[gd_scene load_steps=6 format=3 uid="uid://1dfqee1nejk"]
+
+[ext_resource type="Material" uid="uid://b10ag5f8qc3r8" path="res://Collision/assets/treegreen.tres" id="1_xb0nl"]
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_vc187"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_cywil"]
+albedo_color = Color(0.403922, 0.235294, 0.0941176, 1)
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_5660s"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_76wnt"]
+height = 3.07863
+
+[node name="Tree" type="StaticBody3D" groups=["Tree"]]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.982785, 0)
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CylinderMesh_vc187")
+surface_material_override/0 = SubResource("StandardMaterial3D_cywil")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.89293, 0, 0, 0, 0.696964, 0, 0, 0, 2.85268, 0, 1.64103, 0)
+material_override = ExtResource("1_xb0nl")
+mesh = SubResource("CapsuleMesh_5660s")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="."]
+transform = Transform3D(2.35609, 0, 0, 0, 0.696964, 0, 0, 0, 2.45602, 0, 2.34696, 0)
+material_override = ExtResource("1_xb0nl")
+mesh = SubResource("CapsuleMesh_5660s")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="."]
+transform = Transform3D(1.54566, 0, 0, 0, 0.699271, 0, 0, 0, 1.56811, 0, 3.18782, 0)
+material_override = ExtResource("1_xb0nl")
+mesh = SubResource("CapsuleMesh_5660s")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_76wnt")
